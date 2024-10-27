@@ -300,6 +300,11 @@ app.get('/email-stats', async (req, res) => {
   const stats = await EmailStats.findOne({});
   res.json(stats || { successCount: 0 }); 
 });
+
+app.get('/ping', (req, res) => {
+  res.send('API is live and running!');
+});
+
 mongoose.connection.on('error', (err) => console.error('Database connection error:', err));
 
 app.listen(port, '0.0.0.0', () => {
