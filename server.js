@@ -35,7 +35,7 @@ const passwordSchema = new mongoose.Schema({
 
 const Password = mongoose.model('Password', passwordSchema);
 
-app.use(cors());
+app.use(cors({origin: '*'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -300,7 +300,9 @@ app.get('/email-stats', async (req, res) => {
   const stats = await EmailStats.findOne({});
   res.json(stats || { successCount: 0 }); 
 });
+mongoose.connection.on('error', (err) => console.error('Database connection error:', err));
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
+
