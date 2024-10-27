@@ -266,7 +266,7 @@ app.post('/send-emails', upload.single('file'), async (req, res) => {
                     <div class="footer">
                         <p>Looking forward to the opportunity to work together!</p>
                         <p>Best regards,<br>Girija Shankar Mohanta</p>
-                        <img src="link_to_professional_image.jpg" alt="Professional Image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4F4TdtMHnjJ5p8gsDHPoFrIIXUsseI_HO9w&s" alt="Professional Image">
                     </div>
                 </div>
             </body>
